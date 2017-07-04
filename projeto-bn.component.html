@@ -1,0 +1,16 @@
+    <h1> Notepad </h1>
+  <table id="blocoDeNotas" class="tabela">
+    <tr>
+      <form>
+        <td>
+          <input class="caixaDeTexto" name="digitarNota" placeholder="Digite a sua nota aqui." [(ngModel)]="caixaDeTexto">
+          </td>
+          <td>
+            <button class="botao" type="button" (click)="adicionarNota()">Adicionar</button>
+          </td>
+      </form>
+      <tr *ngFor="let linha of notas">
+        <td class="notaAdici">{{linha.valor}}</td>
+        <td class="botaoApagar"><button id={{linha.id}} (click)="apagarNota(linha.id)">X</button></td>
+      </tr>
+      </table>
